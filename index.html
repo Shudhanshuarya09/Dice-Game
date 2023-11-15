@@ -1,48 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/42985b4a5c.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-    
+    <title>document</title>
+
 </head>
+
 <body class=" bg-sky-300">
-    <div class=" text-center font-extrabold text-7xl pt-14 italic underline">
-        <h1> Refresh Me </h1>
+    <div class=" text-center font-extrabold text-7xl pt-8 italic underline">
+        <h1></h1>
     </div>
-    <div class="flex space-x-28 px-60 justify-center pt-28">   
-        <div> 
+    <div class="text-white font-medium flex justify-center border-l-2 border-r-2 px-4 pt-10">
+        <button class=" bg-blue-500 hover:bg-blue-800 text-2xl font-bold border-r-3 rounded-lg px-2 p-2 tracking-wider" onclick="refresh()"> Refresh Me
+        </button>
+    </div>
+    <div class="flex space-x-28 px-60 justify-center pt-20J">
+        <div>
             <p class="text-center text-4xl font-extrabold pb-4"> Player 1 </p>
-            <img src="/Image/dice6.png" alt="">
+            <img src="/Image/dice6.png" alt="" id="img1">
         </div>
         <div>
-            <p  class="text-center text-4xl font-extrabold pb-4"> Player 2</p>
-            <img src="/Image/dice6.png" alt="">
+            <p class="text-center text-4xl font-extrabold pb-4"> Player 2</p>
+            <img src="/Image/dice6.png" alt="" id="img2">
         </div>
-    </div> 
-<script>
- var randomNumber1 = Math.floor(Math.random()*6) + 1;
- var randomImageSource1 = ("image/dice" + randomNumber1 + ".png");
- var image1 = document.querySelectorAll("img")[0];
- image1.setAttributes("src, randomImageSource1");
+    </div>
+    <script>
 
-var randomNumber2 = Math.floor(Math.random()*6) + 1;
-var randomImageSource2 = ("image/dice" + randomNumber2 + ".png");
-var image2 = document.querySelectorAll("img")[1];
-image2.setAttributes("src, randomImageSource2");
+        function refresh() {
+            // window.location.reload();
+            // var randomNumber1 = Math.floor(Math.random()*6) + 1;
+            // var randomImageSource1 = ("image/dice" + randomNumber1 + ".png");
+            // var image1 = document.querySelectorAll("img")[0];
+            // image1.setAttribute("src",randomImageSource1);
 
-if(randomNumber1 > randomNumber2){
-    document.querySelector("h1").innerHTML = " Player 1 Wins";
-}
-else if (randomNumber2 > randomNumber1){
-    document.querySelector("h1").innerHTML = "Player 2 Wins";
-}
-else {
-    document.queySelector("h1").innerHTML = " Draw!";
-}
+            // var randomNumber2 = Math.floor(Math.random()*6) + 1;
+            // var randomImageSource2 = ("image/dice" + randomNumber2 + ".png");
+            // var image2 = document.querySelectorAll("img")[1];
+            // image2.setAttribute("src",randomImageSource2);
 
-</script>
+            // if(randomNumber1 > randomNumber2){
+            // document.querySelector("h1").innerHTML = " Player 1 Wins";
+            // }
+            // else if (randomNumber2 > randomNumber1){
+            // document.querySelector("h1").innerHTML = "Player 2 Wins";
+            // }
+            // else {
+            // document.querySelector("h1").innerHTML = " Draw!";
+            // }
+
+
+            var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+            var randomImageSource1 = ("image/dice" + randomNumber1 + ".png");
+            var image1 = document.getElementById("img1");
+            // console.log(image1);
+            image1.src = randomImageSource1;
+
+            var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+            var randomImageSource2 = ("image/dice" + randomNumber2 + ".png");
+            var image2 = document.getElementById("img2");
+            // console.log(image2);
+            image2.src = randomImageSource2;
+
+            if (randomNumber1 > randomNumber2) {
+                // console.log(document.querySelector("h1"));
+                document.querySelector("h1").innerHTML = " Player 1 Wins";
+            }
+            else if (randomNumber2 > randomNumber1) {
+                // console.log(document.querySelector("h1"));
+                document.querySelector("h1").innerHTML = "Player 2 Wins";
+            }
+            else {
+                document.querySelector("h1").innerHTML = " Draw!";
+            }
+        }
+
+    </script>
 </body>
+
 </html>
