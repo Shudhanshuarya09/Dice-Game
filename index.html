@@ -18,7 +18,7 @@
         <button class=" bg-blue-500 hover:bg-blue-800 text-2xl font-bold border-r-3 rounded-lg px-2 p-2 tracking-wider" onclick="refresh()"> Refresh Me
         </button>
     </div>
-    <div class="flex space-x-28 px-60 justify-center pt-20J">
+    <div class="flex space-x-28 px-60 justify-center pt-20">
         <div>
             <p class="text-center text-4xl font-extrabold pb-4"> Player 1 </p>
             <img src="/Image/dice6.png" alt="" id="img1">
@@ -76,6 +76,9 @@
             else {
                 document.querySelector("h1").innerHTML = " Draw!";
             }
+            setTimeout(()=>{
+                window.location.reload();
+            },3000)
         }
 
     </script>
